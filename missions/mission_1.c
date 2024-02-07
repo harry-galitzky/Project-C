@@ -4,33 +4,33 @@
 
 void branefuk(const char *bf)
 {
-    char tape[30000] = {0};
-    char *ptr = tape;
+    char str[30000] = {0};
+    char *output = str;
 
     while (*bf != '\0')
     {
         switch (*bf)
         {
         case '+':
-            (*ptr)++;
+            (*output)++;
             break;
         case '-':
-            (*ptr)--;
+            (*output)--;
             break;
         case '>':
-            ptr++;
+            output++;
             break;
         case '<':
-            ptr--;
+            output--;
             break;
         case '.':
-            printf("%c", *ptr);
+            printf("%c", *output);
             break;
         case ',':
             printf("i dont know what to do with that");
             break;
         case '[':
-            if (*ptr == 0)
+            if (*output == 0)
             {
                 int loops = 1;
                 while (loops > 0)
@@ -44,7 +44,7 @@ void branefuk(const char *bf)
             }
             break;
         case ']':
-            if (*ptr != 0)
+            if (*output != 0)
             {
                 int loops = 1;
                 while (loops > 0)
@@ -66,7 +66,7 @@ void branefuk(const char *bf)
 
 int main()
 {
-    char *input = "++++++++[>+>++++<<-]>++>>+<[-[>>+<<-]+>>]>+[-<<<[->[+[-]+>++>>>-<<]<[<]>>++++++[<<+++++>>-]+<<++.[-]<<]>.>+[>>]>+]";
+    char *input = "++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.";
     branefuk(input);
     return 0;
 }
