@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "header_file.h"
 
 void branefuk(const char *bf)
 {
@@ -62,11 +63,4 @@ void branefuk(const char *bf)
         }
         bf++;
     }
-}
-
-int main()
-{
-    char *input = "++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.";
-    branefuk(input);
-    return 0;
 }
